@@ -107,7 +107,9 @@ log_info() {
 #   gem install rails
 
 log_info "Installing Mailcatcher ..."
-  gem install mailcatcher
+#  gem install mailcatcher
+gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"
+# see https://github.com/sj26/mailcatcher/issues/430
 
 log_info "Installing Yarn ..."
   brew install yarn
