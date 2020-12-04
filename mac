@@ -59,19 +59,19 @@ log_info "Starting Redis ..."
 # log_info "Installing and linking ImageMagick, to crop and resize images ..."
 #   brew install imagemagick
 
-log_info "Installing rbenv, to change Ruby versions ..."
-  brew install rbenv
+# log_info "Installing rbenv, to change Ruby versions ..."
+#   brew install rbenv
 
-  if ! grep -qs "rbenv init" $shell_file; then
-    printf '\n# load rbenv\n' >> $shell_file
-    printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> $shell_file
-    printf 'eval "$(rbenv init - --no-rehash)"\n' >> $shell_file
+#   if ! grep -qs "rbenv init" $shell_file; then
+#     printf '\n# load rbenv\n' >> $shell_file
+#     printf 'export PATH="$HOME/.rbenv/bin:$PATH"\n' >> $shell_file
+#     printf 'eval "$(rbenv init - --no-rehash)"\n' >> $shell_file
 
-    log_info "Enable shims and autocompletion ..."
-      eval "$(rbenv init -)"
-  fi
+#     log_info "Enable shims and autocompletion ..."
+#       eval "$(rbenv init -)"
+#   fi
 
-  export PATH="$HOME/.rbenv/bin:$PATH"
+#   export PATH="$HOME/.rbenv/bin:$PATH"
 
 log_info "Installing ruby-build, to install Rubies ..."
   brew install ruby-build
