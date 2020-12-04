@@ -1,35 +1,35 @@
 # #!/usr/bin/env bash
 # # Install Rails
 
-# trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
-# set -e
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+set -e
 
-# create_zshrc_and_set_it_as_shell_file() {
-#   if [ ! -f "$HOME/.zshrc" ]; then
-#     touch "$HOME/.zshrc"
-#   fi
-#   shell_file="$HOME/.zshrc"
-# }
+create_zshrc_and_set_it_as_shell_file() {
+  if [ ! -f "$HOME/.zshrc" ]; then
+    touch "$HOME/.zshrc"
+  fi
+  shell_file="$HOME/.zshrc"
+}
 
-# create_bashrc_and_set_it_as_shell_file() {
-#   if [ ! -f "$HOME/.bashrc" ]; then
-#     touch "$HOME/.bashrc"
-#   fi
-#   shell_file="$HOME/.bashrc"
-# }
+create_bashrc_and_set_it_as_shell_file() {
+  if [ ! -f "$HOME/.bashrc" ]; then
+    touch "$HOME/.bashrc"
+  fi
+  shell_file="$HOME/.bashrc"
+}
 
-# case "$SHELL" in
-#   */zsh) :
-#     create_zshrc_and_set_it_as_shell_file
-#   ;;
-#   *)
-#     create_bashrc_and_set_it_as_shell_file
-#   ;;
-# esac
+case "$SHELL" in
+  */zsh) :
+    create_zshrc_and_set_it_as_shell_file
+  ;;
+  *)
+    create_bashrc_and_set_it_as_shell_file
+  ;;
+esac
 
-# log_info() {
-#   printf "\n\e[0;35m $1\e[0m\n\n"
-# }
+log_info() {
+  printf "\n\e[0;35m $1\e[0m\n\n"
+}
 
 # if ! command -v brew &>/dev/null; then
 #   log_info "Installing Homebrew, a good OS X package manager ..."
