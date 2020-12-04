@@ -86,7 +86,8 @@ log_info "Upgrading and linking OpenSSL ..."
 ruby_version="2.7.1"
 
 log_info "Installing Ruby $ruby_version ..."
-  rbenv install "$ruby_version"
+#   rbenv install "$ruby_version"
+  RUBY_CONFIGURE_OPTS=--with-readline-dir="$(brew --prefix readline)" rbenv install "$ruby_version"
 
 log_info "Setting $ruby_version as global default Ruby ..."
   rbenv global "$ruby_version"
