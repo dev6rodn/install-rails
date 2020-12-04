@@ -108,7 +108,8 @@ log_info() {
 
 log_info "Installing Mailcatcher ..."
 #  gem install mailcatcher
-gem install mailcatcher -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install thin -v '1.5.1' -- --with-cflags="-Wno-error=implicit-function-declaration"
+gem install mailcatcher
 # see https://github.com/sj26/mailcatcher/issues/430
 
 log_info "Installing Yarn ..."
